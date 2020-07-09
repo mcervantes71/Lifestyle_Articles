@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :articles, foreign_key: :author_id, dependent: :destroy
+
   devise :database_authenticatable, :registerable
 
   validates :name, presence: true
