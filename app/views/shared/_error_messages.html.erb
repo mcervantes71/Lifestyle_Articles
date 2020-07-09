@@ -1,0 +1,15 @@
+<% if resource.errors.any? %>
+  <div id="error_explanation">
+    <h2><span><%= pluralize(resource.errors.count, "error") %></span> prohibited from being saved:</h2>
+
+    <ul>
+      <% resource.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+
+      <% if @minimum_password_length %>
+        <li>(<%= @minimum_password_length %> characters minimum)</li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
