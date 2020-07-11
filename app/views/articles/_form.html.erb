@@ -1,16 +1,16 @@
 <%= form_for @article do |f| %>
-  <div class=''>
-    <%= f.text_field :title, placeholder: 'Article name here', class: '', autofocus: true %>
-  </div>
+  <%# label_tag 'category', 'Catergory', class: 'label' %>
+  <%# f.select :catergory, options_for_select(["Bussiness", "Entertainment", "Fashio", "Politics", "Spors"]) %>
 
-  <div class=''>
-    <%= f.text_area :text, placeholder: 'Article details here', class: '' %>
-  </div>
+  <%= f.label :title, 'Title', class: 'label' %>
+  <%= f.text_field :title, autofocus: true %>
 
-  <div class=''>
-    <%= f.text_field :image, placeholder: 'Article name here', class: '' %>
-  </div>
+  <%= f.label :text, 'Text', class: 'label' %>
+  <%= f.text_area :text %>
 
-  <%= f.submit 'Save Article', class: '' %>
-  <%= link_to 'Cancel', user_path(current_user), class: '' %>
+  <%= f.label :image, 'Image Url', class: 'label' %>
+  <%= f.url_field :image %>
+
+  <%= f.button :button, type: :submit, class: 'button guardar' do %><i class="fas fa-plus-circle"></i> Save<% end %>
+  <%= link_to user_path(current_user), class: 'button cancelar' do %><i class="far fa-window-close"></i> Cancel<% end %>
 <% end %>
