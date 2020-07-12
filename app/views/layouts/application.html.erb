@@ -33,9 +33,11 @@
             </div>
         </nav>
 
-        <%= render 'shared/flash_messages' %>
+        <div class="content">
+            <%= render 'shared/flash_messages' %>
 
-        <%= yield %>
+            <%= yield %>
+        </div>        
 
         <footer class='footer'>
             <div>

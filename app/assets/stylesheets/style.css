@@ -149,6 +149,10 @@ table {
   --yellow: #fefe00;
 }
 
+.content {
+   min-height: calc(100vh - 10.6rem);
+}
+
 .title {
   color: var(--gray);
   font-size: 2.5rem;
