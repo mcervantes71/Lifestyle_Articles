@@ -9,6 +9,7 @@
         <link href='https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700;900&display=swap' rel='stylesheet'>
         <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css'>
         <link rel='icon' type='image/gif/png' href="<%= asset_path('icon.png') %>">
+
         <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
         <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     </head>
@@ -19,7 +20,7 @@
             </div>
 
             <div class='nav_links'>
-                <%= link_to 'Home', root_path, class: "nav_link active" %>
+                <%= link_to 'Home', root_path, class: "nav_link" %>
                 <%= link_to 'Fashion', articles_path, class: "nav_link" %>
                 <%= link_to 'Bussiness', articles_path, class: "nav_link" %>
                 <%= link_to 'Sports', articles_path, class: "nav_link" %>
@@ -60,13 +61,6 @@
         <script>
             $(document).ready(function ()
             {
-              console.log("asdf");
-                $('.nav_link').on('click', function ()
-                {
-                    $('.nav_link').removeClass('active');
-                    $(this).addClass('active');
-                });
-
                 $('.user').hover( function()
                 {
                     $('.list').slideToggle();

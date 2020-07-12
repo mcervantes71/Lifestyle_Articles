@@ -214,6 +214,7 @@ table {
 }
 
 .user {
+  cursor: pointer;
   position: relative;
 }
 
@@ -344,13 +345,17 @@ table {
 }
 
 th, td {
-  color: var(--gray);
   border-bottom: 0.1rem solid var(--gray);
   border-collapse: collapse;
+  color: var(--gray);
   height: 2.5rem;
   text-align: center;
   vertical-align: middle;
   width: 15rem;
+}
+
+.th_button, .td_button {
+  width: 7rem;
 }
 
 /* new article */
@@ -364,6 +369,7 @@ th, td {
   color: var(--gray);
   font-size: 0.8rem;
   font-weight: 700;
+  text-align: center;
   text-transform: uppercase;
 }
 
