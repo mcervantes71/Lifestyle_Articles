@@ -12,7 +12,7 @@ class Article < ApplicationRecord
 
   def self.featured
     totals = Article.joins(:votes).group(:id).count
-    article = totals.max_by { |id, total| total }
+    article = totals.max_by { |_id, total| total }
 
     if article.nil?
       Article.first

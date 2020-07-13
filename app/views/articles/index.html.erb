@@ -1,1 +1,10 @@
-<h1 class="title">Articles</h1>
+<article class="featured" style='background-image: url("<%= @articles.featured.image %>");'>
+    <h2 class="featured_title"><%= @articles.featured.title %></h2>
+    <p class="featured_text">
+        <%= @articles.featured.text %>
+    </p>
+</article>
+
+<section class="recent_section">
+    <%= render 'shared/recents_articles', recents: @articles.recents %>
+</section>
