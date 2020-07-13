@@ -1,6 +1,6 @@
 <%= form_for @article do |f| %>
   <%# label_tag 'category', 'Catergory', class: 'label' %>
-  <%# f.select :catergory, options_for_select(["Bussiness", "Entertainment", "Fashio", "Politics", "Spors"]) %>
+  <%# f.select :catergory, options_for_select(["Bussiness", "Entertainment", "Fashio", "Spors"]) %>
 
   <%= f.label :title, 'Title', class: 'label' %>
   <%= f.text_field :title, autofocus: true %>
