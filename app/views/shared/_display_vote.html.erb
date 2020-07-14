@@ -1,5 +1,5 @@
 <% if vote(article) %>
-    <%= link_to article_vote_path(article_id: article.id), :method => :delete do %><span class='like liked'><%= article.votes.count %> <i class='fas fa-thumbs-up'></i></span><% end %>
+  <%= link_to article_vote_path(article_id: article.id), :method => :delete do %><span class='like liked'><%= article.votes.count %> <i class='fas fa-thumbs-up'></i></span><% end %>
 <% else %>
-    <%= link_to article_votes_path(article_id: article.id), method: :post do %><span class='like'><%= article.votes.count %> <i class='fas fa-thumbs-up'></i></span><% end %>
+  <%= link_to article_votes_path(article_id: article.id), method: :post do %><span class='like'><%= article.votes.count %> <i class='fas fa-thumbs-up'></i></span><% end %>
 <% end %>

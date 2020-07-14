@@ -70,11 +70,8 @@ strong,
 sub,
 summary,
 sup,
-table,
 tbody,
-td,
 tfoot,
-th,
 thead,
 time,
 tr,
@@ -135,11 +132,6 @@ blockquote::before {
   content: none;
 }
 
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
 :root {
   --brown: #4e443e;
   --gray: #847f7b;
@@ -150,7 +142,7 @@ table {
 }
 
 .content {
-   min-height: calc(100vh - 10.6rem);
+  min-height: calc(100vh - 10.6rem);
 }
 
 .title {
@@ -212,6 +204,7 @@ table {
 }
 
 /* nav-bar */
+
 .nav_bar {
   align-items: center;
   background-color: #fff;
@@ -295,7 +288,7 @@ table {
 }
 
 .featured_title {
-  bottom: 4.5rem;
+  bottom: 3.5rem;
   color: var(--orange);
   font-weight: 900;
   left: 2rem;
@@ -336,7 +329,13 @@ table {
   left: 1.2rem;
   padding: 0.2rem;
   position: absolute;
+  text-decoration: none;
   top: 1rem;
+}
+
+.recent_category:hover {
+  color: var(--yellow);
+  background-color: #fff;
 }
 
 .recent_title {
@@ -418,10 +417,12 @@ table {
 table {
   border-bottom: 0.1rem solid var(--gray);
   border-collapse: collapse;
+  border-spacing: 0;
   margin: 0.5rem auto;
 }
 
-th, td {
+th,
+td {
   border-bottom: 0.1rem solid var(--gray);
   border-collapse: collapse;
   color: var(--gray);
@@ -431,7 +432,8 @@ th, td {
   width: 15rem;
 }
 
-.th_button, .td_button {
+.th_button,
+.td_button {
   width: 7rem;
 }
 
@@ -450,16 +452,19 @@ th, td {
   text-transform: uppercase;
 }
 
-input[type = text], input[type=url], input[type=password]{
+input[type=text],
+input[type=url],
+input[type=password] {
   display: block;
   margin: 0.5rem 0 1rem;
-  width: 95%
+  width: 95%;
 }
 
-textarea, select {
+textarea,
+select {
   display: block;
   margin: 0.5rem 0 1rem;
-  width: 100%
+  width: 100%;
 }
 
 .button {
@@ -524,7 +529,7 @@ textarea, select {
 }
 
 .copyleft {
-  display:inline-block;
+  display: inline-block;
   transform: rotate(180deg);
 }
 

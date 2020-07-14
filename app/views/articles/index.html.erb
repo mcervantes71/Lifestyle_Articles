@@ -1,7 +1,7 @@
 <article class='featured' style='background-image: url("<%= @articles.featured.image %>");'>
-    <h2 class='featured_title'><%= @articles.featured.title %></h2>
+    <h2 class='featured_title'><%= @articles.featured.title.truncate(50) %></h2>
     <p class='featured_text'>
-        <%= @articles.featured.text %>
+        <%= @articles.featured.text.truncate(100) %>
     </p>
 </article>
 

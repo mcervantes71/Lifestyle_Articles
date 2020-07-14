@@ -1,29 +1,29 @@
 <% if current_user.articles.count == 0 %>
-    <p class='label'>You have 0 Articles</p>
+  <p class='label'>You have 0 Articles</p>
 <% else %>
-    <table>
-        <thead>
-            <tr>
-                <th class='label'>title</th>
-                <th class='label'># votes</th>
-                <th class='th_button'></th>
-                <th class='th_button'></th>
-            </tr>
-        </thead>
+  <table>
+    <thead>
+      <tr>
+        <th class='label'>title</th>
+        <th class='label'># votes</th>
+        <th class='th_button'></th>
+        <th class='th_button'></th>
+      </tr>
+    </thead>
 
-        <tbody>
-            <% current_user.articles.each do |article| %>
-                <tr>
-                    <td><%= article.title %></td>
-                    <td><%= article.votes.count %></td>
-                    <td class='td_button'>
-                        <%= link_to edit_article_path(article), id: "article_#{article.id}", class: 'button guardar' do %><i class='far fa-edit'></i> Editar<% end %>
-                    </td>
-                    <td class='td_button'>
-                        <%= link_to article_path(article), :method => :delete, id: "article_#{article.id}", class: 'button cancelar' do %><i class='far fa-trash-alt'></i> Borrar<% end %>
-                    </td>
-                </tr>
-            <% end %>
-        </tbody>
-    </table>
+    <tbody>
+      <% current_user.articles.each do |article| %>
+        <tr>
+          <td><%= article.title %></td>
+          <td><%= article.votes.count %></td>
+          <td class='td_button'>
+            <%= link_to edit_article_path(article), id: "article_#{article.id}", class: 'button guardar' do %><i class='far fa-edit'></i> Editar<% end %>
+          </td>
+          <td class='td_button'>
+            <%= link_to article_path(article), :method => :delete, id: "article_#{article.id}", class: 'button cancelar' do %><i class='far fa-trash-alt'></i> Borrar<% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 <% end %>
