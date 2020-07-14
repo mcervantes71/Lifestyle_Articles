@@ -1,6 +1,6 @@
 <%= form_for @article do |f| %>
   <%# label_tag 'category', 'Catergory', class: 'label' %>
-  <%# f.select :catergory, options_for_select(["Bussiness", "Entertainment", "Fashio", "Spors"]) %>
+  <%# f.select :catergory, options_for_select(['Bussiness', 'Entertainment', 'Fashio', 'Spors']) %>
 
   <%= f.label :title, 'Title', class: 'label' %>
   <%= f.text_field :title, autofocus: true %>
@@ -11,6 +11,6 @@
   <%= f.label :image, 'Image Url', class: 'label' %>
   <%= f.url_field :image %>
 
-  <%= f.button :button, type: :submit, class: 'button guardar' do %><i class="fas fa-plus-circle"></i> Save<% end %>
-  <%= link_to user_path(current_user), class: 'button cancelar' do %><i class="far fa-window-close"></i> Cancel<% end %>
+  <%= f.button :button, type: :submit, class: 'button guardar' do %><i class='fas fa-plus-circle'></i> Save<% end %>
+  <%= link_to user_path(current_user), class: 'button cancelar' do %><i class='far fa-window-close'></i> Cancel<% end %>
 <% end %>

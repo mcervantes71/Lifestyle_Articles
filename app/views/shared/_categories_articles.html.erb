@@ -1,32 +1,32 @@
 <% counter = 1 %>
 <% @articles.each do |article| %>
   <% if counter == 1 || counter == 2%>
-      <article class="article">
-          <div class="article_img" style='background-image: url("<%= article.image %>");'></div>
+      <article class='article'>
+          <div class='article_img' style='background-image: url("<%= article.image %>");'></div>
 
-          <div class="article_data">
-              <i class="like fas fa-thumbs-up"></i>
+          <div class='article_data'>
+              <%= render 'shared/display_vote', article: article %>
 
-              <h2 class="article_title"><%= article.title %></h2>
+              <h2 class='article_title'><%= article.title %></h2>
 
-              <p class="article_text"><%= article.text %></p>
+              <p class='article_text'><%= article.text %></p>
 
-              <h3 class="article_author"><%= article.author.name %></h3>
+              <h3 class='article_author'><%= article.author.name %></h3>
           </div>
       </article>
   <% elsif counter == 3 || counter == 4 %>
-      <article class="article">
-          <div class="article_data">
-              <i class="like fas fa-thumbs-up"></i>
+      <article class='article'>
+          <div class='article_data'>
+              <%= render 'shared/display_vote', article: article %>
 
-              <h2 class="article_title"><%= article.title %></h2>
+              <h2 class='article_title'><%= article.title %></h2>
 
-              <p class="article_text"><%= article.text %></p>
+              <p class='article_text'><%= article.text %></p>
 
-              <h3 class="article_author"><%= article.author.name %></h3>
+              <h3 class='article_author'><%= article.author.name %></h3>
           </div>
 
-          <div class="article_img" style='background-image: url("<%= article.image %>");'></div>
+          <div class='article_img' style='background-image: url("<%= article.image %>");'></div>
       </article>
   <% end %>
 

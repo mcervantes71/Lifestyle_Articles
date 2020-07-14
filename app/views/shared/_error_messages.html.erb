@@ -1,14 +1,14 @@
 <% if resource.errors.any? %>
   <div>
-    <h2 class="error_title"><span class="error_number"><%= pluralize(resource.errors.count, 'error') %></span> prohibited from being saved:</h2>
+    <h2 class='error_title'><span class='error_number'><%= pluralize(resource.errors.count, 'error') %></span> prohibited from being saved:</h2>
 
-    <ul class="errors_list">
+    <ul class='errors_list'>
       <% resource.errors.full_messages.each do |message| %>
-        <li class="error_list_item"><%= message %></li>
+        <li class='error_list_item'><%= message %></li>
       <% end %>
 
       <% if @minimum_password_length %>
-        <li class="error_list_item">(<%= @minimum_password_length %> characters minimum)</li>
+        <li class='error_list_item'>(<%= @minimum_password_length %> characters minimum)</li>
       <% end %>
     </ul>
   </div>

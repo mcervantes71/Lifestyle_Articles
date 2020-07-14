@@ -1,6 +1,6 @@
 <% recents.each do |article| %>
-    <article class="recent_article" style='background-image: url("<%= article.image %>");'>
-        <h2 class="recent_category"><%= article.categories[0].category_name %></h2>
-        <h2 class="recent_title"><%= article.title %></h2>
+    <article class='recent_article' style='background-image: url("<%= article.image %>");'>
+        <h2 class='recent_category'><%= article.categories[0].category_name %></h2>
+        <h2 class='recent_title'><%= article.title %></h2>
     </article>
 <% end %>
