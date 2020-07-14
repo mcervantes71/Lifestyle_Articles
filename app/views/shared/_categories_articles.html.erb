@@ -9,7 +9,7 @@
 
               <h2 class='article_title'><%= article.title %></h2>
 
-              <p class='article_text'><%= article.text %></p>
+              <p class='article_text'><%= article.text.truncate(150) %></p>
 
               <h3 class='article_author'><%= article.author.name %></h3>
           </div>
@@ -21,7 +21,7 @@
 
               <h2 class='article_title'><%= article.title %></h2>
 
-              <p class='article_text'><%= article.text %></p>
+              <p class='article_text'><%= article.text.truncate(150) %></p>
 
               <h3 class='article_author'><%= article.author.name %></h3>
           </div>
