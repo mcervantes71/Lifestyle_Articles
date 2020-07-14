@@ -2,6 +2,7 @@ class Article < ApplicationRecord
   belongs_to :author, class_name: 'User'
   has_many :votes, dependent: :destroy
   has_many :categories, dependent: :destroy
+  accepts_nested_attributes_for :categories
 
   validates :author_id, presence: true
   validates :title, length: { in: 4..30 }, presence: true, uniqueness: true
