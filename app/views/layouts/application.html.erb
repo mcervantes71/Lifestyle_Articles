@@ -21,10 +21,7 @@
 
             <div class='nav_links'>
                 <%= link_to 'Home', root_path, class: 'nav_link' %>
-                <%= link_to 'Fashion', article_path('Fashion'), class: 'nav_link' %>
-                <%= link_to 'Business', article_path('Business'), class: 'nav_link' %>
-                <%= link_to 'Sports', article_path('Sports'), class: 'nav_link' %>
-                <%= link_to 'Entertainment', article_path('Entertainment'), class: 'nav_link' %>
+                <%= render 'shared/categories_by_priority' %>
             </div>
 
             <div class='session'>

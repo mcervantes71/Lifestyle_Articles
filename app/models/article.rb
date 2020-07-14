@@ -25,4 +25,8 @@ class Article < ApplicationRecord
   def self.recents
     Article.ordered.where(categories: Category.group(:category_name))
   end
+
+  def self.priority
+    Category.group(:category_name).order(priority: :desc).select(:category_name)
+  end
 end
