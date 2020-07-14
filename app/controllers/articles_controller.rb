@@ -6,7 +6,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.find(params[:id])
+    @articles = Article.joins(:categories).where(categories: { category_name: params[:id] }).ordered
   end
 
   def new

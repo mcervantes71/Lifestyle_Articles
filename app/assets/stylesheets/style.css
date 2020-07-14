@@ -285,7 +285,6 @@ table {
 /* featured */
 
 .featured {
-  background-image: url('../img/politics2.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -348,23 +347,71 @@ table {
   position: absolute;
 }
 
-#recent_article1 {
-  background-image: url('../img/bussiness1.jpg');
-}
-
-#recent_article2 {
-  background-image: url('../img/sports1.jpg');
-}
-
-#recent_article3 {
-  background-image: url('../img/fashion1.jpg');
-}
-
-#recent_article4 {
-  background-image: url('../img/entertainment1.jpg');
-}
-
 /* categories */
+
+.article_section {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  margin: 1rem auto;
+  width: 80%;
+}
+
+.article {
+  display: flex;
+}
+
+.article_img {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 2px solid var(--brown);
+  height: 15rem;
+  width: 50%;
+}
+
+.article_data {
+  border: 2px solid var(--brown);
+  position: relative;
+  height: 15rem;
+  width: 50%;
+}
+
+.like {
+  color: var(--gray);
+  position: absolute;
+  right: 0.7rem;
+  top: 0.6rem;
+}
+
+.liked {
+  color: var(--orange);
+}
+
+.article_title {
+  color: var(--light-orange);
+  font-weight: 900;
+  padding: 0.5rem;
+  text-decoration: underline 0.2rem var(--light-orange);
+}
+
+.article_text {
+  color: var(--gray);
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.3rem;
+  margin: 0.5rem;
+  width: 95%;
+}
+
+.article_author {
+  color: #000;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.3rem;
+  margin: 0.5rem;
+  text-align: right;
+  width: 90%;
+}
 
 /* dashboard */
 
