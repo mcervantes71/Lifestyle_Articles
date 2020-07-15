@@ -1,6 +1,6 @@
 <% recents.each do |article| %>
-    <article class='recent_article' style='background-image: url("<%= article.image %>");'>
-        <%= link_to article.categories[0].category_name, article_path(article.categories[0].category_name), class: 'recent_category' %>
-        <h2 class='recent_title'><%= article.title.truncate(30) %></h2>
-    </article>
+  <article class='recent_article' style='background-image: url("<%= article.image %>");'>
+    <%= link_to article.category.category_name, article_path(article.category.id), class: 'recent_category' %>
+    <h2 class='recent_title'><%= article.title.truncate(30) %></h2>
+  </article>
 <% end %>

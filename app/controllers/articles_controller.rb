@@ -6,7 +6,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @articles = Article.joins(:categories).where(categories: { category_name: params[:id] }).ordered
+    @articles = Article.where(category_id: params[:id]).ordered
   end
 
   def new
@@ -18,9 +18,6 @@ class ArticlesController < ApplicationController
 
     if @article.save
       flash.notice = "Article '#{@article.title}' Successfully Created!"
-
-      @category = @article.categories.build(category_name: params[:category][:category_name])
-      @category.save
 
       redirect_to user_path(current_user)
     else
@@ -37,10 +34,6 @@ class ArticlesController < ApplicationController
 
     if @article.update(article_params)
       flash.notice = "Article '#{@article.title}' Successfully Updated!"
-
-      @category = Category.find(@article.id)
-      @category.category_name = params[:categories][:category_name]
-      @category.save
 
       redirect_to user_path(current_user)
     else
@@ -59,6 +52,6 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :text, :image, categories_attributes: [:category_name])
+    params.require(:article).permit(:title, :text, :image, :category_id)
   end
 end

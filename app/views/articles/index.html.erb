@@ -1,10 +1,10 @@
 <article class='featured' style='background-image: url("<%= @articles.featured.image %>");'>
-    <h2 class='featured_title'><%= @articles.featured.title.truncate(50) %></h2>
-    <p class='featured_text'>
-        <%= @articles.featured.text.truncate(100) %>
-    </p>
+  <h2 class='featured_title'><%= @articles.featured.title.truncate(50) %></h2>
+  <p class='featured_text'>
+    <%= @articles.featured.text.truncate(100) %>
+  </p>
 </article>
 
 <section class='recent_section'>
-    <%= render 'shared/recents_articles', recents: @articles.recents %>
+  <%= render 'shared/recents_articles', recents: @articles.recents %>
 </section>

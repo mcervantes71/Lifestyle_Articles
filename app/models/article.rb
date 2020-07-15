@@ -1,10 +1,8 @@
 class Article < ApplicationRecord
   belongs_to :author, class_name: 'User'
+  belongs_to :category
   has_many :votes, dependent: :destroy
-  has_many :categories, dependent: :destroy
-  accepts_nested_attributes_for :categories
 
-  validates :author_id, presence: true
   validates :title, length: { in: 4..30 }, presence: true, uniqueness: true
   validates :text, length: { in: 4..255 }, presence: true
   validates :image, length: { in: 4..255 }, presence: true
@@ -23,10 +21,9 @@ class Article < ApplicationRecord
   end
 
   def self.recents
-    Article.ordered.where(categories: Category.group(:category_name))
-  end
-
-  def self.priority
-    Category.group(:category_name).order(priority: :desc).select(:category_name)
+    articles = [Article.where(category_id: 1).ordered.first]
+    articles << Article.where(category_id: 2).ordered.first
+    articles << Article.where(category_id: 3).ordered.first
+    articles << Article.where(category_id: 4).ordered.first
   end
 end

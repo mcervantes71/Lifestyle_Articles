@@ -4,6 +4,6 @@ module ApplicationHelper
   end
 
   def categories_by_priority
-    Article.priority
+    Category.order(priority: :desc).select(:id, :category_name)
   end
 end
