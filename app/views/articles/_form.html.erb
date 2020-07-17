@@ -11,6 +11,6 @@
   <%= f.label :category_id, 'Catergory', class: 'label' %>
   <%= f.select :category_id, options_for_select([['Sports', 1],  ['Fashion', 2], ['Entertainment', 3], ['Business', 4]], selected: f.object.category_id) %>
 
-  <%= f.button :button, type: :submit, class: 'button guardar' do %><i class='fas fa-plus-circle'></i> Save<% end %>
-  <%= link_to user_path(current_user), class: 'button cancelar' do %><i class='far fa-window-close'></i> Cancel<% end %>
+  <%= f.button :button, type: :submit, class: 'button save' do %><i class='fas fa-plus-circle'></i> Save<% end %>
+  <%= link_to user_path(current_user), class: 'button cancel' do %><i class='far fa-window-close'></i> Cancel<% end %>
 <% end %>

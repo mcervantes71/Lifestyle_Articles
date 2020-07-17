@@ -1,0 +1,10 @@
+.like {
+  color: #847f7b;
+  position: absolute;
+  right: 0.7rem;
+  top: 0.6rem;
+}
+
+.liked {
+  color: #fa6000;
+}
