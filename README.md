@@ -3,6 +3,22 @@
 
 ![screenshot](./docs/screenshot.png)
 
+This project built with Ruby on Rails is based on the Lifestyle Articles website. The following list includes technical skills that were implemented in the project:
+
+- Use MVP architectural pattern
+- Configure RESTFUL routes
+- Use the drivers to intercept user requests.
+- Use view templates for HTML with embedded data
+- Use asset channeling
+- Connect the database to the application
+- Use the active record as ORM
+- Use ActiveRecord validations
+- Pass user input from view through a controller to model securely
+- Remember about thin drivers and the distinction between levels of logic and presentation
+- Avoid the problem of n + 1 queries
+- Use unit tests (Rspec)
+- Deploy applications (Heroku)
+
 ## :package: Built With
 
 - Ruby
@@ -42,7 +58,14 @@ Install gems with:
 Setup database with:
 
 ```sh
+  $ rails db:create
   $ rails db:migrate
+```
+
+Populating the database with:
+
+```sh
+  $ rails db:seed
 ```
 
 ### Usage
@@ -89,6 +112,8 @@ Run:
 - Twitter: [@M4rt1nC3rv4nt3s](https://twitter.com/M4rt1nC3rv4nt3s)
 - Github: [@mcervantes71](https://github.com/mcervantes71)
 - Gmail: [cervantes.martine](mailto:cervantes.martine@gmail.com)
+
+:pencil2: Design idea by [Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio)
 
 ## 🤝 Contributing
 
