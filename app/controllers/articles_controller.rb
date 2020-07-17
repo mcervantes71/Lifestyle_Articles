@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_user!, except: %i[index show]
+  before_action :set_article, only: %i[edit update destroy]
 
   def index
     @articles = Article.all
@@ -25,13 +26,7 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def edit
-    @article = Article.find(params[:id])
-  end
-
   def update
-    @article = Article.find(params[:id])
-
     if @article.update(article_params)
       flash.notice = "Article '#{@article.title}' Successfully Updated!"
 
@@ -42,7 +37,7 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    @article = Article.destroy(params[:id])
+    @article.destroy
 
     flash.notice = "Article '#{@article.title}' Successfully Deleted!"
 
@@ -50,6 +45,10 @@ class ArticlesController < ApplicationController
   end
 
   private
+
+  def set_article
+    @article = Article.find(params[:id])
+  end
 
   def article_params
     params.require(:article).permit(:title, :text, :image, :category_id)
