@@ -3,7 +3,7 @@
     <img class='user_img' src="<%= asset_path('user.png') %>">
 
     <ul class='list'>
-      <%= link_to user_path(current_user), id: "user_#{current_user.id}", class: 'list_link' do %><li class='li'>Dashboard</li><% end %>
+      <%= link_to user_path(current_user), class: 'list_link' do %><li class='li'>Dashboard</li><% end %>
       <%= link_to new_article_path, class: 'list_link' do %><li class='li'>New Article</li><% end %>
       <%= link_to destroy_user_session_path, :method => :delete, class: 'list_link' do %><li class='li'>Sign Out</li><% end %>
     </ul>

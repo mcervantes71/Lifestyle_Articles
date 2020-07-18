@@ -17,10 +17,10 @@
           <td><%= article.title %></td>
           <td><%= article.votes.count %></td>
           <td class='td_button'>
-            <%= link_to edit_article_path(article), id: "article_#{article.id}", class: 'button save' do %><i class='far fa-edit'></i> Edit<% end %>
+            <%= link_to edit_article_path(article), class: 'button save' do %><i class='far fa-edit'></i> Edit<% end %>
           </td>
           <td class='td_button'>
-            <%= link_to article_path(article), :method => :delete, id: "article_#{article.id}", class: 'button cancel' do %><i class='far fa-trash-alt'></i> Delete<% end %>
+            <%= link_to article_path(article), :method => :delete, class: 'button cancel' do %><i class='far fa-trash-alt'></i> Delete<% end %>
           </td>
         </tr>
       <% end %>
