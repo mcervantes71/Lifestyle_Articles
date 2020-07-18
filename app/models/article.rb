@@ -1,6 +1,7 @@
 class Article < ApplicationRecord
   belongs_to :author, class_name: 'User'
-  belongs_to :category
+  has_many :categorization, dependent: :destroy
+  has_many :categories, through: :categorization
   has_many :votes, dependent: :destroy
 
   validates :title, length: { in: 4..30 }, presence: true, uniqueness: true
