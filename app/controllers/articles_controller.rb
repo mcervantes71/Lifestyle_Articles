@@ -9,6 +9,7 @@ class ArticlesController < ApplicationController
 
   def show
     @articles = Article.joins(:categories).where("categories.id = #{params[:id]}")
+    @category_id = params[:id]
   end
 
   def new

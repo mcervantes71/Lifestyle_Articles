@@ -5,10 +5,7 @@ class VotesController < ApplicationController
     @vote = current_user.votes.build(article_id: params[:article_id])
 
     if @vote.save
-      a = Article.find(params[:article_id])
-      c = a.category
-
-      redirect_to article_path(c.id), notice: 'You voted an article.'
+      redirect_to article_path(params[:category_id]), notice: 'You voted an article.'
     else
       redirect_to root_path, alert: 'You cannot vote this article.'
     end
