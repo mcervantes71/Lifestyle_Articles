@@ -8,7 +8,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @articles = Article.joins(:categories).where("categories.id = #{params[:id]}")
+    @articles = Article.joins(:categories).where("categories.id = #{params[:id]}").ordered
     @category_id = params[:id]
   end
 
