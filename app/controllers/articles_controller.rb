@@ -3,11 +3,12 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: %i[edit update destroy]
 
   def index
-    @articles = Article.all
+    @featured = Article.featured
+    @recents = Article.recents
   end
 
   def show
-    @articles = Article.where(category_id: params[:id]).ordered
+    @articles = Article.joins(:categories).where("categories.id = #{params[:id]}")
   end
 
   def new

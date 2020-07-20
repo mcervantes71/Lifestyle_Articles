@@ -22,9 +22,13 @@ class Article < ApplicationRecord
   end
 
   def self.recents
-    articles = [Article.where(category_id: 1).ordered.first]
-    articles << Article.where(category_id: 2).ordered.first
-    articles << Article.where(category_id: 3).ordered.first
-    articles << Article.where(category_id: 4).ordered.first
+    a = Article.joins(:categories).where('categories.id = 1').ordered.first
+    articles = [{ title: a.title, image: a.image, category_name: 'Sports', category_id: 1 }]
+    a = Article.joins(:categories).where('categories.id = 2').ordered.first
+    articles << { title: a.title, image: a.image, category_name: 'Fashion', category_id: 2 }
+    a = Article.joins(:categories).where('categories.id = 3').ordered.first
+    articles << { title: a.title, image: a.image, category_name: 'Entertainment', category_id: 3 }
+    a = Article.joins(:categories).where('categories.id = 4').ordered.first
+    articles << { title: a.title, image: a.image, category_name: 'Business', category_id: 4 }
   end
 end
