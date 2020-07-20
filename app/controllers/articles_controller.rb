@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_user!, except: %i[index show]
-  before_action :set_article, only: %i[edit update destroy]
+  before_action :set_article, only: %i[destroy]
 
   def index
     @featured = Article.featured
@@ -22,19 +22,16 @@ class ArticlesController < ApplicationController
     if @article.save
       flash.notice = "Article '#{@article.title}' Successfully Created!"
 
+      unless params[:categorization].nil?
+        params[:categorization][:categories].each do |category_id|
+          c = @article.categorization.build(category_id: category_id)
+          c.save
+        end
+      end
+
       redirect_to user_path(current_user)
     else
       render :new
-    end
-  end
-
-  def update
-    if @article.update(article_params)
-      flash.notice = "Article '#{@article.title}' Successfully Updated!"
-
-      redirect_to user_path(current_user)
-    else
-      render :edit
     end
   end
 

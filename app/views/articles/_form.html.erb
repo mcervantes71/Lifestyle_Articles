@@ -8,8 +8,13 @@
   <%= f.label :image, 'Image Url', class: 'label' %>
   <%= f.url_field :image %>
 
-  <%= f.label :category_id, 'Catergory', class: 'label' %>
-  <%= f.select :category_id, options_for_select([['Sports', 1],  ['Fashion', 2], ['Entertainment', 3], ['Business', 4]], selected: f.object.category_id) %>
+  <%= fields_for :categorization do |f1| %>
+    <%= label_tag 'category_id', 'Choose catergories:', class: 'label' %></br >
+    <label for='category_id' class='label'><%= f1.check_box :categories, { multiple: true }, 1, false %> Sports</label></br >
+    <label for='category_id' class='label'><%= f1.check_box :categories, { multiple: true }, 2, false %> Fashion</label></br >
+    <label for='category_id' class='label'><%= f1.check_box :categories, { multiple: true }, 3, false %> Entertainment</label></br >
+    <label for='category_id' class='label'><%= f1.check_box :categories, { multiple: true }, 4, false %> Business</label></br ></br >
+  <% end %>
 
   <%= f.button :button, type: :submit, class: 'button save' do %><i class='fas fa-plus-circle'></i> Save<% end %>
   <%= link_to user_path(current_user), class: 'button cancel' do %><i class='far fa-window-close'></i> Cancel<% end %>
