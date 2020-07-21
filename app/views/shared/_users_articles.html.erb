@@ -1,6 +1,7 @@
 <% users.each do |user| %>
   <tr>
     <td><%= user.name %></td>
-    <td><%= user.articles.count %></td>
+<%byebug%>
+    <td><%= user.articles_count %></td>
   </tr>
 <% end %>
