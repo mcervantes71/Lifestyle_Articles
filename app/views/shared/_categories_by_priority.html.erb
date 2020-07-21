@@ -1,5 +1,0 @@
-<% categories = categories_by_priority %>
-
-<% categories.each do |category| %>
-  <%= link_to category.category_name, article_path(category.id), class: 'nav_link' %>
-<% end %>

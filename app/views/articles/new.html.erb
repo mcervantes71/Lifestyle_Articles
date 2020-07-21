@@ -1,7 +1,7 @@
 <h1 class='title'>New Article</h1>
 
 <div class='form_container'>
-  <%= render 'shared/error_messages', resource: @article %>
+  <%= error_messages(@article) %>
 
   <%= render partial: 'form' %>
 </div>

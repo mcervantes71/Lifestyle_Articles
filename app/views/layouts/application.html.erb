@@ -21,16 +21,16 @@
 
       <div class='nav_links'>
         <%= link_to 'Home', root_path, class: 'nav_link' %>
-        <%= render 'shared/categories_by_priority' %>
+        <%= categories_by_priority %>
       </div>
 
       <div class='session'>
-        <%= render 'shared/session_links' %>
+        <%= session_links %>
       </div>
     </nav>
 
     <div class='content'>
-      <%= render 'shared/flash_messages' %>
+      <%= flash_messages %>
 
       <%= yield %>
     </div>
