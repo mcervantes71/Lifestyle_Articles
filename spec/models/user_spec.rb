@@ -1,29 +1,31 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  it 'should create new user' do
-    user = create(:user)
-    expect(user).to be_present
-  end
+  let(:user) { User.new }
 
-  it 'should not create new user' do
-    create(:user, password: nil)
-    raise_error('password cannot be blank')
-  end
-
-  context 'validate presence of' do
-    it { should validate_presence_of(:name) }
-  end
-
-  describe 'associations' do
-    it 'has many articles' do
-      assoctiation = described_class.reflect_on_association(:articles)
-      expect(assoctiation.macro).to eq :has_many
+  describe 'New user validations' do
+    it 'User no name' do
+      user.name = nil
+      user.valid?
+      expect(user.errors[:name]).to include('can\'t be blank')
     end
 
-    it 'has many votes' do
-      assoctiation = described_class.reflect_on_association(:votes)
-      expect(assoctiation.macro).to eq :has_many
+    it 'User name validation' do
+      user.name = 'test'
+      user.valid?
+      expect(user.errors[:name]).to_not include('can\'t be blank')
+    end
+
+    it 'User no username' do
+      user.username = nil
+      user.valid?
+      expect(user.errors[:username]).to include('can\'t be blank')
+    end
+
+    it 'User username validation' do
+      user.username = 'test'
+      user.valid?
+      expect(user.errors[:username]).to_not include('can\'t be blank')
     end
   end
 end

@@ -87,7 +87,7 @@ Run:
 ```
 
 ### Testing
-[Pre-requisite] 
+[Pre-requisite]
 ``` sh
   $ gem install rspec
 ```
@@ -103,6 +103,7 @@ Run:
 ```sh
   $ rspec
 ```
+![testing_result](./docs/testing_result.png)
 
 ## :busts_in_silhouette: Author
 

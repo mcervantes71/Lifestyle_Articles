@@ -3,7 +3,7 @@ require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../config/environment', __dir__)
 # Prevent database truncation if the environment is production
-abort('The Rails environment is running in production mode!') if Rails.env.production?
+abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 
@@ -24,21 +24,6 @@ require 'rspec/rails'
 
 # Checks for pending migrations and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove these lines.
-
-require 'devise'
-# require_relative 'support/controller_macros'
-require_relative '../spec/controllers/support/controller_macros'
-# ...
-
-RSpec.configure do |config|
-  # ...
-
-  # Add these
-  config.include Devise::Test::ControllerHelpers, type: :controller
-  config.include FactoryBot::Syntax::Methods
-  config.extend ControllerMacros, type: :controller
-end
-
 begin
   ActiveRecord::Migration.maintain_test_schema!
 rescue ActiveRecord::PendingMigrationError => e
@@ -76,14 +61,4 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
-
-  Shoulda::Matchers.configure do |config1|
-    config1.integrate do |with|
-      with.test_framework :rspec
-
-      # Keep as many of these lines as are necessary:
-      with.library :active_record
-      with.library :active_model
-    end
-  end
 end

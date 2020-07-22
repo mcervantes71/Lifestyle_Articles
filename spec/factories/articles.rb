@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :article do
     user_id { 1 }
-    content { 'Awesome post!' }
+    content { 'Awesome article!' }
   end
 
   trait :author do
