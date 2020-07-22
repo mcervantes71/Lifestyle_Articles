@@ -28,7 +28,15 @@ class Article < ApplicationRecord
     articles << { title: a.title, image: a.image, category_name: 'Fashion', category_id: 2 }
     a = Article.joins(:categories).where('categories.id = 3').ordered.first
     articles << { title: a.title, image: a.image, category_name: 'Entertainment', category_id: 3 }
-
+    a = Article.joins(:categories).where('categories.id = 4').ordered.first
     articles << { title: a.title, image: a.image, category_name: 'Business', category_id: 4 }
+  end
+
+  def self.category_articles(id)
+    Article.joins(:categories).where("categories.id = #{id}").ordered
+  end
+
+  def self.category_votes_list(id)
+    category_articles(id).joins(:votes).select('articles.id, COUNT(articles.id) AS counter').group('articles.id')
   end
 end

@@ -8,7 +8,8 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @articles = Article.joins(:categories).where("categories.id = #{params[:id]}").ordered
+    @articles = Article.category_articles(params[:id])
+    @list = Article.category_votes_list(params[:id])
     @category_id = params[:id]
   end
 

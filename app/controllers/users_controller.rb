@@ -2,10 +2,11 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @users = User.joins(:articles).select('users.*, COUNT(articles.id) AS articles_count').group('users.id')
+    @users = User.all
+    @list = User.users_list
   end
 
   def show
-    @user = User.find(params[:id])
+    @list = User.user_articles_list(params[:id])
   end
 end
