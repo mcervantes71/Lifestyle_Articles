@@ -1,0 +1,11 @@
+
+<article class='featured' style='background-image: url("<%= @featured.image %>");'>
+  <h2 class='featured_title'><%= @featured.title.truncate(50) %></h2>
+  <p class='featured_text'>
+    <%= @featured.text.truncate(100) %>
+  </p>
+</article>
+
+<section class='recent_section'>
+  <%= recent_articles %>
+</section>
